@@ -852,7 +852,7 @@ func (f *FlagSet) parseOne() (seen bool, err error) {
 	if len(f.args) > 2 && f.isFlagTerminator(f.args[1]) {
 		f.Tokens = append(f.Tokens, f.args[2:]...)
 		f.args = f.args[:1]
-		return false, nil
+		return true, nil
 	}
 
 	numMinuses := 1
